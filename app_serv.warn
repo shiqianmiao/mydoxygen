@@ -1,0 +1,237 @@
+warning: The selected output language "chinese" has not been updated
+since release 1.8.2.  As a result some sentences may appear in English.
+
+/doxygen/app_serv/app/adcenter/AdcenterServiceApp.class.php+++6+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/apns/ApnsServiceApp.class.php+++6+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/auth/AuthServiceApp.class.php+++6+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/autoapp/AutoappServiceApp.class.php+++6+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/autocomplete2/Autocomplete2ServiceApp.class.php+++6+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/city/CityServiceApp.class.php+++6+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/config/ConfigServiceApp.class.php+++6+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/contacts/ContactsServiceApp.class.php+++6+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/dept/DeptServiceApp.class.php+++7+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/evaluate/EvaluateServiceApp.class.php+++6+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/extphone/ExtphoneServiceApp.class.php+++6+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/feedback/FeedbackServiceApp.class.php+++6+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/geo/GeoServiceApp.class.php+++6+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/log/LogServiceApp.class.php+++5+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/page/PageServiceApp.class.php+++7+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/pay/PayServiceApp.class.php+++6+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/pos/PosServiceApp.class.php+++6+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/sale/SaleServiceApp.class.php+++7+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/sale/SaleServiceApp_2.class.php+++7+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/search/SearchServiceApp.class.php+++6+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/spiders/SpidersServiceApp.class.php+++7+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/update/UpdateServiceApp.class.php+++6+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/upload/UploadServiceApp.class.php+++6+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/user/UserServiceApp.class.php+++6+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/uvtop/UvtopServiceApp.class.php+++6+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/var/VarServiceApp.class.php+++6+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/xinhedai/XinhedaiServiceApp.class.php+++6+++warning: the name `HeadURL' supplied as the second argument in the \file statement is not an input file
+/doxygen/app_serv/app/member/MemberServiceApp.class.php+++16+++warning: documented symbol `MemberServiceApp::array' was not declared or defined.
+/doxygen/app_serv/app/member/MemberServiceApp.class.php+++22+++warning: documented symbol `MemberServiceApp::string' was not declared or defined.
+/doxygen/app_serv/app/member/MemberServiceApp.class.php+++28+++warning: documented symbol `MemberServiceApp::string' was not declared or defined.
+/doxygen/app_serv/app/adcenter/AdcenterServiceApp.class.php+++15+++warning: argument 'car_id' of command @param is not found in the argument list of AdcenterServiceApp::cancelPayrank($params)
+/doxygen/app_serv/app/adcenter/AdcenterServiceApp.class.php+++15+++warning: The following parameters of AdcenterServiceApp\cancelPayrank($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/autoapp/AutoappServiceApp.class.php+++194+++warning: argument '$imgUrl' of command @param is not found in the argument list of AutoappServiceApp::getTask()
+/doxygen/app_serv/app/autoapp/AutoappServiceApp.class.php+++194+++warning: argument '$params' of command @param is not found in the argument list of AutoappServiceApp::getTask()
+/doxygen/app_serv/app/autoapp/AutoappServiceApp.class.php+++243+++warning: argument '$imgUrl' of command @param is not found in the argument list of AutoappServiceApp::getTaskCode()
+/doxygen/app_serv/app/autoapp/AutoappServiceApp.class.php+++243+++warning: argument '$params' of command @param is not found in the argument list of AutoappServiceApp::getTaskCode()
+/doxygen/app_serv/app/car/CarServiceApp.class.php+++8+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/condition/ConditionServiceApp.class.php+++106+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/condition/ConditionServiceApp.class.php+++84+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/condition/ConditionServiceApp.class.php+++31+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/condition/ConditionServiceApp.class.php+++61+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/condition/ConditionServiceApp.class.php+++120+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/condition/ConditionServiceApp.class.php+++15+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/condition/ConditionServiceApp.class.php+++46+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/config/ConfigServiceApp.class.php+++29+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/contacts/ContactsServiceApp.class.php+++89+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/depreciate/DepreciateServiceApp.class.php+++18+++warning: The following parameters of DepreciateServiceApp\submit($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/dept/DeptServiceApp.class.php+++198+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/dept/DeptServiceApp.class.php+++255+++warning: The following parameters of DeptServiceApp\getDeptList($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/dept/DeptServiceApp.class.php+++212+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/dept/DeptServiceApp.class.php+++213+++warning: Found unknown command `\params'
+/doxygen/app_serv/app/evaluate/EvaluateServiceApp.class.php+++37+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/feedback/FeedbackServiceApp.class.php+++29+++warning: The following parameters of FeedbackServiceApp\add($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/feedback/FeedbackServiceApp.class.php+++62+++warning: unexpected end of comment block while parsing the argument of command throws
+/doxygen/app_serv/app/friends/FriendsServiceApp.class.php+++4+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/friends/FriendsServiceApp.class.php+++47+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/friends/FriendsServiceApp.class.php+++15+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/friends/FriendsServiceApp.class.php+++88+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/member/MemberServiceApp.class.php+++239+++warning: The following parameters of MemberServiceApp\changePasswd($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/member/MemberServiceApp.class.php+++270+++warning: The following parameters of MemberServiceApp\checkResetCode($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/member/MemberServiceApp.class.php+++73+++warning: The following parameters of MemberServiceApp\fastLogin($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/member/MemberServiceApp.class.php+++168+++warning: The following parameters of MemberServiceApp\getInfo($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/member/MemberServiceApp.class.php+++34+++warning: The following parameters of MemberServiceApp\login($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/member/MemberServiceApp.class.php+++124+++warning: The following parameters of MemberServiceApp\register($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/member/MemberServiceApp.class.php+++301+++warning: The following parameters of MemberServiceApp\sendMobileValidCode($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/member/MemberServiceApp.class.php+++206+++warning: The following parameters of MemberServiceApp\updateInfo($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/page/PageServiceApp.class.php+++26+++warning: argument '$id' of command @param is not found in the argument list of PageServiceApp::getViewCount($params)
+/doxygen/app_serv/app/page/PageServiceApp.class.php+++26+++warning: The following parameters of PageServiceApp\getViewCount($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/page/PageServiceApp.class.php+++46+++warning: argument '$id' of command @param is not found in the argument list of PageServiceApp::setViewCount($params)
+/doxygen/app_serv/app/page/PageServiceApp.class.php+++46+++warning: argument '$val' of command @param is not found in the argument list of PageServiceApp::setViewCount($params)
+/doxygen/app_serv/app/page/PageServiceApp.class.php+++46+++warning: argument '$expire，不设置默认永不过期' of command @param is not found in the argument list of PageServiceApp::setViewCount($params)
+/doxygen/app_serv/app/page/PageServiceApp.class.php+++46+++warning: The following parameters of PageServiceApp\setViewCount($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/payment/PaymentServiceApp.class.php+++3+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/payment/PaymentServiceApp.class.php+++13+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/payment/PaymentServiceApp.class.php+++13+++warning: argument 'state' of command @param is not found in the argument list of PaymentServiceApp::getOrderList($params)
+/doxygen/app_serv/app/payment/PaymentServiceApp.class.php+++13+++warning: The following parameters of PaymentServiceApp\getOrderList($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/payment/PaymentServiceApp.class.php+++120+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/payment/PaymentServiceApp.class.php+++43+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/pay/PayServiceApp.class.php+++65+++warning: argument 'app_id' of command @param is not found in the argument list of PayServiceApp::depositCredit($params)
+/doxygen/app_serv/app/pay/PayServiceApp.class.php+++65+++warning: argument 'from_app' of command @param is not found in the argument list of PayServiceApp::depositCredit($params)
+/doxygen/app_serv/app/pay/PayServiceApp.class.php+++65+++warning: argument 'amount' of command @param is not found in the argument list of PayServiceApp::depositCredit($params)
+/doxygen/app_serv/app/pay/PayServiceApp.class.php+++65+++warning: argument 'source_type' of command @param is not found in the argument list of PayServiceApp::depositCredit($params)
+/doxygen/app_serv/app/pay/PayServiceApp.class.php+++65+++warning: argument 'source_id' of command @param is not found in the argument list of PayServiceApp::depositCredit($params)
+/doxygen/app_serv/app/pay/PayServiceApp.class.php+++65+++warning: The following parameters of PayServiceApp\depositCredit($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/pay/PayServiceApp.class.php+++86+++warning: argument 'user_id' of command @param is not found in the argument list of PayServiceApp::migrate($params)
+/doxygen/app_serv/app/pay/PayServiceApp.class.php+++86+++warning: argument 'user_realname' of command @param is not found in the argument list of PayServiceApp::migrate($params)
+/doxygen/app_serv/app/pay/PayServiceApp.class.php+++86+++warning: argument 'available_balance' of command @param is not found in the argument list of PayServiceApp::migrate($params)
+/doxygen/app_serv/app/pay/PayServiceApp.class.php+++86+++warning: argument 'dept_id' of command @param is not found in the argument list of PayServiceApp::migrate($params)
+/doxygen/app_serv/app/pay/PayServiceApp.class.php+++86+++warning: argument 'dept_name' of command @param is not found in the argument list of PayServiceApp::migrate($params)
+/doxygen/app_serv/app/pay/PayServiceApp.class.php+++86+++warning: The following parameters of PayServiceApp\migrate($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/priceevaluate/PriceevaluateServiceApp.class.php+++64+++warning: The following parameters of PriceevaluateServiceApp\getEvaluate($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/priceevaluate/PriceevaluateServiceApp.class.php+++273+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/saleapp/SaleappServiceApp.class.php+++710+++warning: Found unknown command `\params'
+/doxygen/app_serv/app/saleapp/SaleappServiceApp.class.php+++332+++warning: The following parameters of SaleappServiceApp\changePrice($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/saleapp/SaleappServiceApp.class.php+++695+++warning: The following parameters of SaleappServiceApp\cityConfig($params=array()) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/saleapp/SaleappServiceApp.class.php+++238+++warning: The following parameters of SaleappServiceApp\delete($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/saleapp/SaleappServiceApp.class.php+++185+++warning: The following parameters of SaleappServiceApp\edit($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/saleapp/SaleappServiceApp.class.php+++353+++warning: The following parameters of SaleappServiceApp\getCarInfoByCarId($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/saleapp/SaleappServiceApp.class.php+++295+++warning: The following parameters of SaleappServiceApp\getDoneList($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/saleapp/SaleappServiceApp.class.php+++469+++warning: The following parameters of SaleappServiceApp\getEfficientFollowUser($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/saleapp/SaleappServiceApp.class.php+++597+++warning: The following parameters of SaleappServiceApp\getFollowUserByCarId($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/saleapp/SaleappServiceApp.class.php+++502+++warning: The following parameters of SaleappServiceApp\getHistoryFollowUser($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/saleapp/SaleappServiceApp.class.php+++269+++warning: The following parameters of SaleappServiceApp\getOnSaleList($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/saleapp/SaleappServiceApp.class.php+++411+++warning: The following parameters of SaleappServiceApp\getRecommendedFollowUser($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/saleapp/SaleappServiceApp.class.php+++31+++warning: The following parameters of SaleappServiceApp\publish($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/saleapp/SaleappServiceApp.class.php+++547+++warning: The following parameters of SaleappServiceApp\searchFollowUser($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/saleapp/SaleappServiceApp.class.php+++644+++warning: The following parameters of SaleappServiceApp\setBlack($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/sale/SaleServiceApp_3.class.php+++5+++warning: Found unknown command `\change'
+/doxygen/app_serv/app/sale/SaleServiceApp_3.class.php+++72+++warning: Found unknown command `\params'
+/doxygen/app_serv/app/sale/SaleServiceApp_3.class.php+++510+++warning: Found unknown command `\params'
+/doxygen/app_serv/app/sale/SaleServiceApp_3.class.php+++899+++warning: Found unknown command `\params'
+/doxygen/app_serv/app/sale/SaleServiceApp_3.class.php+++5+++warning: Found unknown command `\change'
+/doxygen/app_serv/app/sale/SaleServiceApp_3.class.php+++311+++warning: Found unknown command `\params'
+/doxygen/app_serv/app/sale/SaleServiceApp_3.class.php+++1620+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/sale/SaleServiceApp_3.class.php+++1620+++warning: argument 'id' of command @param is not found in the argument list of SaleServiceApp::deleteDraft($params)
+/doxygen/app_serv/app/sale/SaleServiceApp_3.class.php+++1635+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/sale/SaleServiceApp_3.class.php+++72+++warning: Found unknown command `\params'
+/doxygen/app_serv/app/sale/SaleServiceApp_3.class.php+++510+++warning: Found unknown command `\params'
+/doxygen/app_serv/app/sale/SaleServiceApp_3.class.php+++899+++warning: Found unknown command `\params'
+/doxygen/app_serv/app/sale/SaleServiceApp_4.class.php+++300+++warning: The following parameters of SaleServiceApp_4\addressBook($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/sale/SaleServiceApp_4.class.php+++556+++warning: The following parameters of SaleServiceApp_4\callbackList($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/sale/SaleServiceApp_4.class.php+++699+++warning: The following parameters of SaleServiceApp_4\getCarTabs($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/sale/SaleServiceApp_4.class.php+++257+++warning: The following parameters of SaleServiceApp_4\getSaleDetailByCarId($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/sale/SaleServiceApp_4.class.php+++26+++warning: The following parameters of SaleServiceApp_4\newSale($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/sale/SaleServiceApp_4.class.php+++608+++warning: The following parameters of SaleServiceApp_4\potentialUserList($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/sale/SaleServiceApp_4.class.php+++492+++warning: The following parameters of SaleServiceApp_4\todoList($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/sale/SaleServiceApp_4.class.php+++458+++warning: The following parameters of SaleServiceApp_4\todoTypeList($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/sale/SaleServiceApp_4.class.php+++199+++warning: The following parameters of SaleServiceApp_4\updateSale($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/search/SearchServiceApp.class.php+++237+++warning: The following parameters of SearchServiceApp\getSaleDetail($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/search/SearchServiceApp.class.php+++34+++warning: The following parameters of SearchServiceApp\getSaleList($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/spiders/SpidersServiceApp.class.php+++328+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/spiders/SpidersServiceApp.class.php+++328+++warning: argument '$url' of command @param is not found in the argument list of SpidersServiceApp::delPersonalCarByUrl($params)
+/doxygen/app_serv/app/spiders/SpidersServiceApp.class.php+++328+++warning: The following parameters of SpidersServiceApp\delPersonalCarByUrl($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/spiders/SpidersServiceApp.class.php+++364+++warning: The following parameters of SpidersServiceApp\getNewAllNetCount($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/spiders/SpidersServiceApp.class.php+++380+++warning: The following parameters of SpidersServiceApp\sendCallEventToTao($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/subscribe/SubscribeServiceApp.class.php+++60+++warning: Found unknown command `\params'
+/doxygen/app_serv/app/subscribe/SubscribeServiceApp.class.php+++97+++warning: Found unknown command `\params'
+/doxygen/app_serv/app/subscribe/SubscribeServiceApp.class.php+++164+++warning: Found unknown command `\params'
+/doxygen/app_serv/app/subscribe/SubscribeServiceApp.class.php+++33+++warning: Found unknown command `\params'
+/doxygen/app_serv/app/subscribe/SubscribeServiceApp.class.php+++34+++warning: Found unknown command `\params'
+/doxygen/app_serv/app/subscribe/SubscribeServiceApp.class.php+++97+++warning: Found unknown command `\params'
+/doxygen/app_serv/app/subscribe/SubscribeServiceApp.class.php+++33+++warning: Found unknown command `\params'
+/doxygen/app_serv/app/subscribe/SubscribeServiceApp.class.php+++34+++warning: Found unknown command `\params'
+/doxygen/app_serv/app/subscribe/SubscribeServiceApp.class.php+++69+++warning: argument 'int' of command @param is not found in the argument list of SubscribeServiceApp::getCarListByClientId($params)
+/doxygen/app_serv/app/subscribe/SubscribeServiceApp.class.php+++69+++warning: The following parameters of SubscribeServiceApp\getCarListByClientId($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/subscribe/SubscribeServiceApp.class.php+++43+++warning: argument 'array' of command @param is not found in the argument list of SubscribeServiceApp::getCarListByConditionId($params)
+/doxygen/app_serv/app/subscribe/SubscribeServiceApp.class.php+++43+++warning: The following parameters of SubscribeServiceApp\getCarListByConditionId($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/subscribe/SubscribeServiceApp.class.php+++60+++warning: Found unknown command `\params'
+/doxygen/app_serv/app/subscribe/SubscribeServiceApp.class.php+++218+++warning: The following parameters of SubscribeServiceApp\getConfigV2($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/subscribe/SubscribeServiceApp.class.php+++131+++warning: Found unknown command `\params'
+/doxygen/app_serv/app/subscribe/SubscribeServiceApp.class.php+++164+++warning: Found unknown command `\params'
+/doxygen/app_serv/app/update/UpdateServiceApp.class.php+++42+++warning: The following parameters of UpdateServiceApp\getCKBVersion($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/update/UpdateServiceApp.class.php+++111+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/update/UpdateServiceApp.class.php+++84+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/update/UpdateServiceApp.class.php+++194+++warning: The following parameters of UpdateServiceApp\getSaleAppArdVersion($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/update/UpdateServiceApp.class.php+++168+++warning: The following parameters of UpdateServiceApp\getSaleAppIOSVersion($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/upload/UploadServiceApp.class.php+++15+++warning: The following parameters of UploadServiceApp\imgUpload($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/user/UserServiceApp.class.php+++198+++warning: The following parameters of UserServiceApp\changePwd($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/user/UserServiceApp.class.php+++133+++warning: The following parameters of UserServiceApp\getSaleUsersInfo($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/user/UserServiceApp.class.php+++173+++warning: The following parameters of UserServiceApp\getUserInfoByUsername($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/var/VarServiceApp.class.php+++65+++warning: The following parameters of VarServiceApp\getCarBrandOption($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/var/VarServiceApp.class.php+++124+++warning: The following parameters of VarServiceApp\getCarModelOption($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/var/VarServiceApp.class.php+++90+++warning: The following parameters of VarServiceApp\getCarSeriesOption($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/var/VarServiceApp.class.php+++165+++warning: Found unknown command `\desc'
+/doxygen/app_serv/app/var/VarServiceApp.class.php+++190+++warning: The following parameters of VarServiceApp\showRecommended($params) are not documented:
+  parameter '$params'
+/doxygen/app_serv/app/weixin/WeixinServiceApp.class.php+++44+++warning: argument 'data' of command @param is not found in the argument list of WeixinServiceApp::saveUnsub($params)
+/doxygen/app_serv/app/user/UserServiceApp.class.php+++5+++warning: Found unknown command `\subpackage'
+/doxygen/app_serv/app/user/UserServiceApp.class.php+++8+++warning: Found unknown command `\subpackage'
+/doxygen/app_serv/app/user/UserServiceApp.class.php+++11+++warning: Found unknown command `\subpackage'
+/doxygen/app_serv/app/user/UserServiceApp.class.php+++14+++warning: Found unknown command `\subpackage'
+/doxygen/app_serv/app/user/UserServiceApp.class.php+++17+++warning: Found unknown command `\subpackage'
+/doxygen/app_serv/app/user/UserServiceApp.class.php+++20+++warning: Found unknown command `\subpackage'
+/doxygen/app_serv/app/sale/SaleServiceApp_3.class.php+++5+++warning: Found unknown command `\change'
+/doxygen/app_serv/app/sale/SaleServiceApp_3.class.php+++5+++warning: Found unknown command `\change'

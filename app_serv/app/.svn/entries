@@ -1,0 +1,163 @@
+10
+
+dir
+37468
+svn://192.168.5.33/v3/app_serv/app
+svn://192.168.5.33/v3
+
+
+
+2014-12-30T10:14:13.283834Z
+37442
+wufeng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ed597562-ae53-11e2-a499-1389c266d0bc
+
+unit
+dir
+
+subscribe
+dir
+
+sync2site
+dir
+
+upload
+dir
+
+sale
+dir
+
+condition
+dir
+
+xinhedai
+dir
+
+extphone
+dir
+
+friends
+dir
+
+apns
+dir
+
+auth
+dir
+
+usercomment
+dir
+
+search
+dir
+
+car
+dir
+
+depreciate
+dir
+
+member
+dir
+
+city
+dir
+
+phone
+dir
+
+geo
+dir
+
+uvtop
+dir
+
+opendept
+dir
+
+contacts
+dir
+
+vehicle
+dir
+
+log
+dir
+
+update
+dir
+
+autocomplete2
+dir
+
+feedback
+dir
+
+adcenter
+dir
+
+saleapp
+dir
+
+var
+dir
+
+pay
+dir
+
+priceevaluate
+dir
+
+dept
+dir
+
+pos
+dir
+
+autocomplete
+dir
+
+weixin
+dir
+
+config
+dir
+
+evaluate
+dir
+
+spiders
+dir
+
+autoapp
+dir
+
+score
+dir
+
+chefubao
+dir
+
+page
+dir
+
+payment
+dir
+
+user
+dir
+

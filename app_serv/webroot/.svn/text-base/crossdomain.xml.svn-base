@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<cross-domain-policy>
+    <site-control permitted-cross-domain-policies="all"/>
+    <allow-access-from domain="*.273.cn" to-ports="*"/>
+    <allow-http-request-headers-from domain="*.273.cn" headers="*"/>
+    <allow-access-from domain="*.273.com.cn" to-ports="*"/>
+    <allow-http-request-headers-from domain="*.273.com.cn" headers="*"/>
+</cross-domain-policy>

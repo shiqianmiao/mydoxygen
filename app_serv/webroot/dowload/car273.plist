@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>assets</key>
+			<array>
+				<dict>
+					<key>kind</key>
+					<string>software-package</string>
+					<key>url</key>
+					<string>http://mbsapi.273.com.cn/download/car273.ipa</string>
+				</dict>
+				<dict>
+					<key>kind</key>
+					<string>display-image</string>
+					<key>needs-shine</key>
+					<true/>
+					<key>url</key>
+					<string>http://static.273.cn/app/ms/images/phone_install_icon.png</string>
+				</dict>
+			</array>
+			<key>metadata</key>
+			<dict>
+				<key>bundle-identifier</key>
+				<string>cn.273.yeguan</string>
+				<key>bundle-version</key>
+				<string>2.45</string>
+				<key>kind</key>
+				<string>software</string>
+				<key>subtitle</key>
+				<string>273</string>
+				<key>title</key>
+				<string>273业管</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

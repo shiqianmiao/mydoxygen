@@ -1,0 +1,961 @@
+https://appserv.273.cn
+
+系统参数:
+_api_version
+_api_method
+_api_time
+_api_key
+_api_token
+_api_passport(需要用户登陆的接口必须)
+_api_app(需要用户登陆的接口必须)
+客户端证书(由273提供):
+_api_key
+_api_secret
+
+以_api_（除去_api_passport和_api_app）开头的参数请使用get方式
+注意：_api_passport和_api_app为登陆者身份信息，请使用post方式。
+
+调试参数（可选,客户端发版时请将此参数去掉）:
+_api_debug
+为1的时候会在bc后台记录请求参数和返回结果的日志
+
+第一步：获取_api_token
+https://appserv.273.cn/1.0/auth.getAccessToken?_api_time={发起请求时间戳}&_api_key={提供给的公钥}&_api_secret={md5(_api_secret{提供的私钥} + _api_time)}
+
+返回:_api_token,之后的请求请使用此_api_token,客户端可将此_api_token保留下来，_api_token有效期是30天
+
+事例:
+https://appserv.273.cn/1.0/search.getSaleList?_api_time={发起请求时间戳}&_api_key={提供给的公钥}&_api_token={通过auth.getAccessToken得到的令牌}&{method_params方法需要的参数}
+在此_api_version=1.0，_api_method=search.getSaleList
+
+统一返回:
+    返回正确结果的格式：
+        json_encode(array(‘errorCode’=>0，’errorMessge’=>’’,’data’=>method返回的内容))；
+    返回错误结果的格式：
+        errorCode为相应错误码，errorMessge为错误信息，data=’’;
+        注:errorCode为9表示_api_token已过期，请重新调用auth.getAccessToken方式获取_api_token
+
+更新日志:
+2013-8-25
+1.修改sale.phoneList方法
+说明：修改来电未接通筛选的方式，删除了phone_access参数筛选未接通来电的方式，改为当参数lasting值为-1时，筛选未接通的来电
+参数：和一期sale.phoneList参数一致
+返回结果:和一期sale.phoneList返回结果一致
+2.增加sale.getOtherDepts方法
+说明：获取当前门店所在城市的其它门店列表
+无参数
+返回结果:
+Array
+(
+    Array
+        (
+            [dept_id] => 门店ID
+            [dept_name] => 门店名称
+            [telephone] => 门店联系电话
+            [address] => 门店地址
+        )
+)
+2013-8-23
+1.新增方法:sale.addressBook
+说明：通迅录接口
+参数：dept_id:门店ID,参数值为空时默认查询当前业管所在门店的通迅录
+返回结果:
+Array
+(
+    [dept_info] => Array(
+			[dept_id] => 门店ID
+            [dept_name] => 门店名称
+            [telephone] => 门店联系电话
+            [address] => 门店地址
+			[user_info] => Array(
+				Array(
+						[username] => 店员ID
+						[real_name] => 店员姓名
+						[role_id] => 角色ID
+						[role_name] => 角色名称
+						[mobile] => 手机号码
+						[telephone] => 电话号码
+						[address] => 店员地址
+						[email] => 店员邮箱
+					)
+			)
+        )
+)
+
+2013-8-22
+1. sale.saleList 方法修改
+说明：增加查询类型query_type=store,即当参数query_type等于my时为查询我的卖车列表，当参数query_type等于store时为查询店内卖车列表
+参数：当query_type等于store时，新增一个参数follow_user,归属人ID，如8200038
+
+2013-8-21
+1. sale.saleList方法在原参数基础上新增加参数
+说明:我的卖车列表增加新的筛选条件
+新增参数：
+	sale_status :成交状态， 状态: 0:不限，1:未出售, 2:已出售
+	published :发布时间范围， 范围：0:不限， 1：一周内， 2：半个月内， 3：一个月内， 4：三个月内
+	originate :来源， 0：不限，1：个人录入， 2：系统分配
+返回结果：
+	有一期sale.saleList返回的所有结果，
+	新增返回结果有：
+	sale_status_show:成交状态描述，
+	originate:来源描述
+
+2. sale.buyList 方法修改
+说明：增加查询类型query_type=store,即当参数query_type等于my时为查询我的买车列表，当参数query_type等于store时为查询店内买车列表
+参数：和一期sale.buyList参数一致(仅增加了query_type的查询类型)
+返回结果：和一期sale.buyList返回结果一致
+3. sale.phoneList 方法修改
+说明:我的来电列表、店内来电列表增加未接通的筛选
+参数：新增一个参数：phone_access,电话接通状态， 0：不限， 1：未接通
+	  其它参数和一期sale.phoneList的参数一致
+2013-8-6
+1.记录检测开始时间 condition.startCheck
+参数
+	car_number = 车牌号
+
+返回 bool
+2013-07-30:
+1.新增方法update.getMsArdVersion
+说明:安卓版本更新接口
+参数:
+    version : 当前客户端的版本，第一版为1.0
+返回结果:
+    如果不需要更新:
+        array();
+    需要更新版本:
+        array(
+            version：最新版本号
+            msg:更新内容，以换行符分隔
+            force:是否强制更新，0不强制，1强制
+            url:安装文件url
+        )
+
+2013-07-28:
+1.新增方法dept.getDeptCarNum
+说明:获取一个门店当天的车源总数和新增车源总数
+参数：
+    store_id:门店id
+返回结果:
+    array(
+        car_total : 车源总数
+        car_add_total:车源新增总数
+    )
+
+2013-07-23:
+1.新增方法apns.getAndroidInfoByTime
+说明：通过时间查询android消息推送服务信息
+参数：
+    time:上一次获取消息的时间
+返回结果：
+array(
+    array(
+        id:android消息推送服务id
+        title:标题
+        car_info:详细消息(type=1时存放消息为车源id,type=2时参考apns.getCarInfoByIds)
+        type:类型
+        description:描述
+        create_time:该消息创建时间
+    ),
+    time :本次消息发送时间，供下次使用
+)
+
+2013-07-18:
+1.新增方法autocomplete.find
+说明:搜索框自动获取提示词，最多时返回十条数据
+参数:
+    city_domain: 城市domain
+    keyword：输入词
+返回:
+    array(
+        array(
+            title => 显示的词语
+            brand_id => 品牌id
+            series_id => 车系id
+        ),..........
+    )
+
+
+2013-07-17:
+
+1.新增方法apns.push
+说明：apns苹果消息推送服务
+参数：
+    id:apns消息id
+    description：发送消息的描述
+    type：消息类型
+2.新增方法apns.getCarInfoByIds
+说明：通过id查询苹果消息推送服务
+参数：
+    ids:要查询的id的集合：例如ids=928148,934390;
+返回结果：
+array(
+    array(
+        id=>车源id
+        create_time=>车源发布时间
+        update_time=>车源更新时间
+        cover_photo=>封面图的url
+        title=>车源标题
+        description=>车源描述
+        kilometer=>表显里程
+        card_time=>上牌时间
+        ckb_check=>是否车况宝检测
+        price=>车的预售价格
+        ad_note=>一句话广告语
+        displacement=>排量
+        gearbox_type=>变速箱类型
+    ),
+    .......
+),
+3.新增方法apns.addDeviceToken
+说明：增加设备令牌
+参数：
+    device_token:设备令牌
+    username: 用户名。例如：135400001
+    type:设备令牌类型：1.ios正常；2.ios停止推送；3android正常；4android停止推送
+4.新增方法apns.getApnsInfoById  .  示例type=1时id = 34;type=2时id=35；id=36
+说明：通过id查询苹果消息推送服务信息
+参数：
+    id:苹果消息推送服务id
+返回结果：
+array(
+    id:苹果消息推送服务id
+    title:标题
+    car_info:详细消息(type=1时存放消息为车源id,type=2时参考apns.getCarInfoByIds)
+    type:类型
+    description:描述
+    create_time:该消息创建时间
+)
+
+5.新增方法apns.getOneDeviceToken
+说明：通过device_token查询详细信息(主要是type)
+参数：
+    device_token:设备令牌
+返回结果：
+array(
+    id:设备令牌id
+    device_token:设备令牌
+    type:设备令牌类型
+)
+6.新增方法apns.updateDeviceToken
+说明：更新device_token的类型
+参数：
+    type：要更新的类型
+    device_token:设备令牌
+
+
+2013-07-15:
+1.新增方法city.getFuzzyCityByName
+说明：通过模糊查询城市名称获取单个城市信息来匹配外部传入的城市名称
+参数：
+    city_name 城市名称
+返回结果：
+    array(
+    id：与参数name相匹配的城市id，当id=0时表示无法匹配到相应的城市或者匹配到了多个城市
+    name:城市名称
+    domain:城市区号，例如：0591
+    )
+
+2013-07-10:
+1.新增方法user.getSaleUsersInfo
+说明:获取门店业务员
+参数:
+    dept_id 门店id
+返回结果:
+    array(
+        array(
+            id:业务员id
+            username:业务员账号
+            real_name:业务员真实名字
+        )
+    )
+2.新增方法sale.saleList
+说明：获取卖车列表
+参数:
+    query_type:查询类型等于my时表示查询我的车源，其它情况为搜索查询
+    start：开始位置默认0
+    end：结束位置默认20
+    status：状态0：不限 1：未审核 2:已审核 3：未售出 4:已售出 5:冻结 6：终止
+    keyword：关键字
+    insert_time：最近发布时间
+    price：价格范围，以‘-’分隔，元为单位，如30000.00-50000.00
+    time：上牌时间范围，以'-'，分隔，如3-5
+    make_code：品牌code
+    family_code：车系code
+    vehicle_type：车型code
+返回:
+    array(
+        array(
+            id:车源id
+            info_id:车源info_id
+            status:审核状态0：未审核1：已审核
+            sale_status:出售状态
+            status_show:车源状态描述
+            vehicle_type:车型code
+            make_code:品牌code
+            family_code:车系code
+            vehicle_key:车型key
+            photo:列表图
+            province:省份id
+            city:城市id
+            district:区域id
+            follow_user:跟单业务员
+            customer_id:卖主id
+            plate_province：交易省份id
+            plate_city：交易城市id
+            car_color：车身颜色
+            price：价格万为单位
+            kilometer：表显里程万为单位
+            car_number：车牌号
+            note:车源描述
+            title：一句话广告
+            transfer_num：过户次数1，一手车；2，变更过1次；3，变更过2次：.......;7，变更过6次以上
+            maintain_address:保养地点1，在4s店维修保养；2，在一般维修店
+            use_quality：使用性质1，非营运；2，营运;3，营转非;4，租赁车;5，特种车;6，教练车
+            sale_quality:车源性质:1，个人;2，车商;3，租赁公司；4，修理厂
+            brand_caption：标题
+            safe_time：交强险费到期时间
+            year_check_time：年检到期时间
+            busi_insur_time：商业险费到期时间
+            card_time：上牌时间
+            insert_time：发布时间
+            update_time：更新时间
+            telephone：业务员电话
+            follow_user_name：业务员名字
+            contact_user：卖主名字
+            contact_telephone:卖主联系电话
+            contact_telephone_addr:卖主联系电话归属地
+            idcard:卖主身份证
+            contact_telephone2:卖主备用电话
+            dept_name：门店名称
+            image=>array(
+                    array(
+                        id=>图片id
+                        file_path=>图片url
+                        cover=>是否封面
+                        index=>展示顺序
+                        )
+                    )
+            )
+        )
+3.新增方法sale.phoneList
+说明：车源来电列表
+参数：
+    query_type：查询类型,user表示查询我的通话，store表示查询门店通话
+    salesman：业务员username,query_type=store时可用，表示查询门店某个业务员的通话
+    lasting：通话持续时间，秒为单位
+    time：通话时间点范围，以_分隔，如2013-07-10_2013-07-11
+    make_code:make_code
+    family_code:family_code
+    vehicle_type:vehicle_type
+    start:查询起点，如第一条1
+    end：查询结束点，如第20条20
+返回:
+    有sale.saleList的所有结果
+    其他字段有
+    call_phone:呼入电话
+    call_time:接听时间点
+    call_lasting:接听持续时间
+    audio_URL:录音地址
+    call_phoneAddr:呼入电话所在低
+4.新增方法sale.buyList
+说明：获取买车列表
+参数：和sale.saleList一致
+返回:
+    array(
+        array(
+            id:买车id
+            status:审核状态
+            sale_status:出售状态
+            status_show:车源状态描述
+            dept_id:门店id
+            vehicle_type
+            make_code
+            family_code
+            vehicle_key
+            province
+            city
+            district
+            customer_id
+            plate_province
+            plate_city
+            min_price
+            max_price
+            air_displacement:排量范围
+            kilometer
+            card_age:车龄范围
+            note
+            brind_name:标题
+            follow_user
+            insert_time
+            update_time
+            brand_caption
+            contact_user
+            telephone
+            contact_telephone:卖主联系电话
+            contact_telephone_addr:卖主联系电话归属地
+            idcard:卖主身份证
+            contact_telephone2:卖主备用电话
+            follow_user_name:业务员名字
+            dept_name
+            start_card_time:开始上牌时间
+            end_card_time:结束上牌时间
+        )
+    )
+5.新增方法sale.newSale
+说明：发布卖车
+参数：
+    'vehicle_type'=>'string(1,5)',    //车类型
+    'make_code'=>'string(2,20)',      //车品牌
+    'family_code'=>'string(2,20)',    //车系
+    'vehicle_key'=>'string(20)',    //车型
+    'province'=>'number(1,5)',           //交易省份
+    'city'=>'number(1,5)',               //交易城市
+    'district'=>'number',           //交易地区
+    'plate_province'=>'number(1,5)',     //上牌省份
+    'plate_city'=>'number(1,5)',         //上牌城市
+    'brind_name'=>'string(100)',    //用户手动填写的车的品牌信息 备注：1.字段拼写错误，正确是brand_name 2.表里还有个brind_note是不用的
+    'car_color'=>'number(1,3)',          //车颜色
+    'price'=>'number(1,10)',              //车的预售价格
+    'kilometer'=>'number(1,10)',          //表显里程
+    'car_number'=>'string(15)',     //车牌号
+    'note'=>'string(2000)',         //车况简介
+    'title'=>'string(50)',         //一句话广告
+    'card_time'=>'date(YYYY-MM-DD)',      //上牌时间
+    'safe_time'=>'date(YYYY-MM-DD)',      //交强险到期时间
+    'year_check_time'=>'date(YYYY-MM-DD)',      //年检到期时间
+    'busi_insur_time'=>'date(yYYY-MM-DD)',      //商业险到期时间
+    'transfer_num'=>'number(1,2)',       //过户次数,1,一手车2，变更过1次；3，变更过2次：.......;7，变更过6次以上
+    'maintain_address'=>'number(2)',   //保养地点 1在4S店维修保养,2在一般维修店保养
+    'use_quality'=>'number(1,2)',        //使用性质 1非营运,2营运,3营转非,4租赁车,5特种车,6教练车
+    'sale_quality'=>'number(2)',       //车源性质 1个人,2车商,3租赁公司,4修理厂
+    'contact_user'=>'string(6,30)',   //卖主姓名
+    'telephone'=>'string(5,20)',          //车主联系方式
+    'telephone2'=>'string(5,20)',     //卖主备用电话
+    'idcard' => 'string(30)',        //卖主身份证号
+    'dept_id' => 'number(1,5)',      //门店id
+    'image' => array(
+        array(
+            'content' => 图片base64_encode后内容
+            ‘cover’ =>1封面，0不为封面
+            'id' => 修改车源的时候需要
+        )
+    )
+返回:
+    车源id
+6.新增方法sale.updateSale
+说明：修改卖车
+参数：
+    和sale.newSale一致，增加id：车源id
+返回：
+    和sale.newSale一致
+7.新增方法sale.newBuy
+说明:新增买车
+参数：
+    'province'=>'number(5)',           //交易省份                          
+    'city'=>'number(5)',               //交易城市                          
+    'district'=>'number',           //交易地区                             
+    'plate_province'=>'number(5)',     //买主所在省份                      
+    'plate_city'=>'number(5)',         //买主所在城市                      
+    'min_price'=>'number(10)',              //价格范围最低价               
+    'max_price'=>'number(10)',              //价格范围最高价               
+    'air_displacement'=>'string(10)',             //排量范围               
+    0009：1.0以下
+    1015：1.0到1.5
+    1620：1.6到2.0
+    2130：2.1到3.0
+    3099：3.0以上
+    'kilometer'=>'number(4)',          //表显里程范围                      
+    1:一万公里以下
+    2:2万公里以下
+    3:3万公里以下
+    5:5万公里以下
+    7:7万公里以下
+    10：十万公里以下
+    'note'=>'string(2000)',         //需求简介                             
+    'contact_user'=>'string(2,20)',   //卖主姓名                           
+    'telephone'=>'string(5,20)',          //车主联系方式          
+    'vehicle_type'=>'string(5)',    //车类型
+    'make_code'=>'string(20)',      //车品牌
+    'family_code'=>'string(20)',    //车系
+    'vehicle_key'=>'string(20)',    //车型
+    'brind_name'=>'string(100)',    //用户手动填写的车的品牌信息,没有填写系统会自动生成brind_name
+    'start_card_time'=>string(4)   //开始上牌时间:如2000
+    'end_card_time' => string(4)  //结束上牌时间：如2008
+    'card_age' => 'string(10)'        //车龄
+    1:1年内
+    103:1-3年
+    305:3-5年
+    508:5-8年
+    810:8-10年
+    1099:10年以上
+    'telephone2'=>'string(5,20)',     //卖主备用电话
+    'idcard' => 'string(30)',        //卖主身份证号
+返回
+    买车id
+
+8:新增方法sale.updateBuy
+说明：修改买车
+参数: 和sale.newBuy一致,增加id:买车id
+返回:
+    买车id
+
+9：新增方法sale.refreshRank
+说明:刷新车源
+参数:
+    info_id=>车源info_id
+返回：
+    成功：
+    array(
+        'total_number' => 该业务员总共剩余的刷新次数
+        'car_number' => 该车源剩余的刷新次数
+    )
+    失败：
+    errorCode = 1
+    data=错误信息
+
+2013-07-09:
+1.新增方法dept.getDeptByCity
+说明:根据城市获取门店信息
+参数:
+    city_id
+返回结果：
+array(
+    array(
+    id:门店id
+    dept_name:门店名称
+    address:门店地址
+    telephone:门店电话号码
+    province:省份id
+    city：城市id
+    photo:门店图片
+    shop_pic:门店图片
+    shop_point:门店坐标
+    manage_name:店长名字
+    insert_time:开业时间
+    car_total:车源总数
+    car_add_total:今日新增车源总数
+    ),...........
+)
+2.新增方法feedback.add
+说明：反馈留言
+参数:
+    source:1，ios主站客户端；2，安卓主站客户端；
+    content：反馈填写内容
+    insert_user（可选）：用户标示
+    contract（可选）：用户联系方式，手机号号码QQ号等等
+    imei: '手机imei',
+    phone_type:'手机类型',
+    firmware: '手机固件',
+    resolution: '手机分辨率',
+    client_version:'软件版本',
+返回结果:
+    1,新增留言成功
+    0，新增留言失败
+3.新增方法var.getHotCity
+说明：获取热门城市
+参数：无
+返回结果：
+    array(
+        array(
+            name:城市名
+            domain:城市域名，如0591
+            id:城市id
+        ),.......
+    )
+2013-07-04:
+1.新增方法update.getMbsArdVersion
+说明:安卓业管客户端版本更新接口
+参数：
+    version：客户端当前使用的版本号,比如第一版为2.00
+返回结果:
+    不需要更新返回array()
+    需要更新返回
+    array(
+        version => 最新的版本号
+        msg => 更新的内容说明,以换行符分隔
+        url => 下载地址
+    )
+2.新增方法update.getMbsIosVersion
+说明:ios业管客户端版本更新接口
+参数：
+    version：客户端当前使用的版本号,比如第一版为2.00
+    type：0越狱版,1appStore版
+返回结果:
+    不需要更新返回array()
+    需要更新返回
+    array(
+        version => 最新的版本号
+        msg => 更新的内容说明,以换行符分隔
+        url => 下载地址
+    )
+2013-07-02:
+1.新增方法dept.getAllDeptPoint
+说明：获取所有门店的坐标，建议客户端自行保存，定期更新
+参数：无
+返回结果：
+array(
+    array(
+        'id' => 门店id,
+        'dept_name' => 门店名称,
+        'province' => 门店省分id,
+        'city'  => 门店城市id,
+        'shop_point' => 门店坐标，可能为空字符串，正常为字符串'xxxxx,xxxxxx'
+    )
+)
+2.新增方法search.getSaleDetail
+说明：获取车源详情
+参数：
+    id : 车源id
+返回结果
+    array(
+        'id' => 车源id
+        ‘create_time’ => 发布时间
+        ‘update_time’ => 更新时间
+        ‘cover_photo’ => 封面图url
+        'title' => 标题
+        ‘price’ => 价格
+        ‘kilometer’ => 行驶里程
+        ‘description’ => 详情描述
+        ‘card_time’ => 上牌时间
+        ‘car_body_type’ => 车身结构 1两厢,2三厢,3掀背,4硬顶敞篷,5软顶敞篷
+        'year_check_time' => 年检到期时间
+        ‘safe_force_time’ => 强险到期时间
+        ‘maintain_address’ => 保养地点:0未知保养地点,1在4S店维修保养,2在一般维修店保养
+        'ext_phone' => 6位转接号
+        'brand_name' => 品牌名称
+        'series_name' => 车系名称
+        'model_name' => 车身参数，即车型号
+        'plate_province_id' => 上牌省份id
+        'plate_city_id' => 上牌城市id
+        'store_id' => 门店id
+        'dept_name' => 门店名称
+        ‘follow_user_name’ => 业务员名称
+        'images' => array(
+            array(
+                file_path:图片url，没有http://头请组装上http://img.273.com.cn/,有就不用对url做处理
+                is_cover:是否是封面图 0不是，1是
+            ),.......
+        )
+        'price_suggest_car' => 价位推荐，search.getSaleList得到的结果info结构一致
+        'type_suggest_car' => 同车型推荐，search.getSaleList得到的结果info结构一致
+        'page_count' => 浏览数,如果结果是0,表示服务端出现异常，建议随即展示
+        'dept_addr' => 门店地址
+        'shop_point' => 门店坐标
+        ‘dept_telephone’ => 门店电话
+        'car_color'=>车身颜色(之前有给配置表to林光亮)
+        ‘displacement’=>排量
+        ‘gearbox_type’=>变速箱类型id
+        'gearbox_name' => 变速箱类型名称
+        'plate_city_name'=>上牌城市名称
+    )
+3.新增方法update.getMsIosVersion
+说明:ios主站客户端版本更新接口
+参数：
+    version：客户端当前使用的版本号,比如第一版为1.0
+    type：0越狱版,1appStore版
+返回结果:
+    不需要更新返回array()
+    需要更新返回
+    array(
+        version => 最新的版本号
+        msg => 更新的内容说明,以换行符分隔
+        url => 下载地址
+    )
+
+
+2013-06-20:
+将passport和app改为系统参数:_api_passport和_api_app(目前使用均为bc)
+注:_api_passport由user.login方法返回结果提供，客户端登陆后可将次_api_passport保留下来,不必每次都获取
+服务端需要知道登陆用户信息的方法需要客户端提供这两个参数的值
+
+
+2013-06-17:
+1.新增图片上传服务 upload.imgUpload
+说明：图片上传接口
+参数:
+    content : 使用 MIME base64 对图片内容进行编码的字符串
+    name : 图片原始名称，能知道后缀就行,比如.jpg
+    category(可选) : 类别
+    unique(可选)：外部键，比如打水印需要知道的门店id,一般不需要，需要水印的门店车源图片必须
+返回:
+    array(
+        url=>原图的url
+    )
+
+2013-06-16：
+1.根据VIN码获取车型配置数据 vehicle.vin
+参数：vin  VIN码
+返回：数据库Id
+
+2.检测数据保存接口 condition.publish
+别附文档
+返回 
+Array
+(
+    [item] => Array
+        (
+            [1] => true
+            [2] => true
+            [3] => false
+            [4] => false
+        )
+
+    [id] => 49 
+)
+item 返回各部分的保存结果 true成功 false失败 键值数字表示第几步
+3.取检测列表 condition.getList
+参数：
+     type=unfinish  未完成
+     type=finish    已完成
+	min_id   最小ID
+	offset  启始行
+	limit   行数
+返回 列表数组
+
+3.2
+取检测统计 condition.getCount
+参数：
+     type=unfinish  未完成
+     type=finish    已完成
+
+返回 数量
+4.取检测信息详情 condition.getInfoById
+参数
+	id = 检测信息ID
+	format  1 要格式化数据  0 不要格式化数据
+返回 数组
+
+
+5.用户登录 user.login
+参数
+ 	account_id 帐号
+	passwd 密码 md5后的值
+
+返回 passport 用户标识串  需要登录操作的API 都需要带上_api_passport=用户标识串
+
+6.取用户信息 user.getUserInfo
+
+参数
+    _api_passport  登录时返回的passport
+    _api_app       目前都是bc
+
+返回
+Array
+(
+    [user] => Array
+        (）
+    [permisssions] = array(
+	)
+)
+permisssions 表示权限 有相应键值表示有相应权限
+有键名为check表示有检测平台的权限
+
+
+
+2013-06-13:
+(1):新增接口var.getPriceOption
+说明：获取价格筛选栏
+参数：无
+返回：
+    array(
+        array(
+            text=>文本内容
+            search=>查询条件
+        ),
+        ........
+    )
+(2):新增接口var.getCarAgeOption
+说明：获取车龄筛选栏
+参数：无
+返回：
+    array(
+        array(
+            text=>文本内容
+            search=>查询条件
+        ),
+        .......
+    )
+(3):var.getKilometerOption
+说明：获取里程筛选栏
+参数：无
+返回：
+    array(
+        array(
+            text=>文本内容
+            search=>查询条件
+        ),
+        .......
+    )
+(4):var.getCarTypeOption
+说明：获取车类型筛选栏
+参数：无
+返回：
+    array(
+        array(
+            text=>车类型名
+            id=>车类型id，查询条件
+        ),
+        ......
+    )
+(5):var.getHotCarBrandOption
+说明：获取热门品牌(最多十一个)
+参数:
+    type_id(非必要)：车型id
+返回:
+    array(
+        array(
+            text=>品牌名
+            id=>品牌id
+            path=>品牌url
+            full_spell=>品牌小写拼音，空格分隔汉子
+            initial=>品牌首字母
+            ),
+            ........
+    )
+(6):var.getCarBrandOption
+说明：获取品牌（不限个数）,参数和返回值同var.getHotCarBrandOption
+
+(7):var.getCarSeriesOption
+说明：获取车系
+参数：brand_id：品牌id
+      type_id: 车类型id
+返回：
+    array(
+        array(
+            id=>车系id
+            brand_id=>对应品牌id
+            type_id=>对应车类型id
+            maker_id=>制造商id
+            initial=>首字母
+            text=>车系名称
+            full_spell=>车系小写全拼
+            path=>车系url
+        ),
+        ........
+    )
+(8):search.getSaleList
+说明：获取车源列表,参数涉及到时间均为时间戳
+方法保留参数:均可选
+    offset:偏移量
+    limit:取出的数量
+    sort:排序field-desc field-asc , field为下面的field参数任选一
+    kw:关键词
+field参数:均可选(字段均为int类型，如果需要区间查询,字段的值设为字符串min-max，min和max必须都具备，否则此查询条件失效)
+    id：车源id
+    create_time：车源发布时间
+    update_time：车源更新时间
+    type_id：车类型型id
+    brand_id：品牌id
+    maker_id：制造商id
+    series_id：车系id
+    model_id：车型id
+    deal_province_id：交易省份id
+    deal_city_id：交易城市id
+    car_color：车颜色
+    price：车的预售价格
+    kilometer：表显里程
+    card_time：上牌时间
+    transfer_num：过户次数
+    maintain_address：保养地点(1在4S店维修保养,2在一般维修店保养)
+    use_type：使用性质(1非营运,2营运,3营转非,4租赁车,5特种车,6教练车)
+    sale_type：车源性质(1个人,2车商,3租赁公司,4修理厂)
+    store_id：业务员部门id
+    follow_user_id：跟单业务员id
+    car_body_type：车身结构(1两厢,2三厢,3掀背,4硬顶敞篷,5软顶敞篷)
+    status:审核状态(0未审核，1已审核)
+    ckb_check：是否进行车况宝检测(0不是，1是)
+    ckb_level：车况等级
+    displacement：排量
+    gearbox_type：变速箱类型
+    cover_photo：是否有图（0无图，1有图）
+
+返回:
+    array(
+        info=>array(
+            array(
+                id=>车源id
+                create_time=>车源发布时间
+                update_time=>车源更新时间
+                cover_photo=>封面图的url
+                title=>车源标题
+                description=>车源描述
+                kilometer=>表显里程
+                card_time=>上牌时间
+                ckb_check=>是否车况宝检测
+                price=>车的预售价格
+                ad_note=>一句话广告语
+                displacement=>排量
+                gearbox_type=>变速箱类型
+                is_approve=>是否认证车源0：未认证1：认证
+            ),
+            .......
+        ),
+        total=>查询到记录的总数,
+        ext=>array(
+            brand_id => 搜索词对应的品牌id
+            series_id => 搜索词对应的车系id
+            brand_name => 品牌名(只有品牌id时返回)
+            series_name => 车系名
+        )
+    )
+
+2013-06-04:
+
+(1):新增接口evaluate.getHistoryEvaluate
+说明: 取同车系评估记录
+参数:
+    brand_name : 品牌名称
+    series_name ： 车系名称
+返回:
+    array(
+        array(
+            city_name => 城市名
+            brand_caption => 车源标题
+            eval_price => 评估价格
+            member_name => 评估师名字
+            answer_time => 评估时间
+            answer_note => 评估说明
+            answer => 评估次数
+            customer_name => 客户姓名
+        ),
+        ............
+    )
+(2):新增接口evaluate.getResult
+说明：通过ID取评估结果
+参数:
+    id : 评估id
+返回:array(
+        insert_time => 评估创建时间戳
+        price => 评估价格
+        note => 说明
+        member_name => 评估师名字 
+    )
+
+(3):新增接口：evaluate.publish
+说明:发布评估
+参数：
+    brand_name：品牌名
+    series_name：车系名
+    model_name：车型名
+    city_name: 城市名
+    year：上牌年份
+    month：上牌月份
+    check_year：年检到期年份
+    check_month : 年检到期月份
+    safe_year : 保险到期年份
+    safe_month : 保险到期月份
+    vehicle_type_name : 车类型名
+    color_name ：车身颜色
+    note : 其他说明
+    kilometer : 行驶里程（如3.1）,以万公里为单位
+    real_name : 联系人
+    mobile ：手机号
+    info_source ：5（固定值）
+返回：评估id or false
+
+    
+
+
+
+
+

@@ -1,0 +1,27 @@
+var classVehicleServiceApp =
+[
+    [ "getBrandById", "classVehicleServiceApp.html#a987a13f408194a6df9a046b8da295f9c", null ],
+    [ "getBrandByIds", "classVehicleServiceApp.html#ab085dd24411a2f3ab761d10807fe8678", null ],
+    [ "getBrandByUrl", "classVehicleServiceApp.html#a8aab914c9b3b29252441b84f679d9c63", null ],
+    [ "getBrandIdListByKeyword", "classVehicleServiceApp.html#a1f77fc4ff54fd33db849dc655107696a", null ],
+    [ "getBrandList", "classVehicleServiceApp.html#a5bf9fe54f7424607507c3f10adc88db3", null ],
+    [ "getBrandListByChar", "classVehicleServiceApp.html#a28d83eb837ff8b952a46a8f1f9274b29", null ],
+    [ "getBrandListByTypeId", "classVehicleServiceApp.html#a4b4d2f47a5d761a70a88751f986e2100", null ],
+    [ "getInfoByVIN", "classVehicleServiceApp.html#a581313d3b0ee83ebb84989694c4a4cb7", null ],
+    [ "getMakerById", "classVehicleServiceApp.html#ae61a992a42335c4440590f065d08066a", null ],
+    [ "getMakerList", "classVehicleServiceApp.html#a9ffbd262a4e756314a5f8991f4f84b9c", null ],
+    [ "getMakerListByBrandId", "classVehicleServiceApp.html#af99926b569c593fd3c19a4403a9af054", null ],
+    [ "getModelById", "classVehicleServiceApp.html#aa77e03ad2b9b261aa60f6d823643fa6e", null ],
+    [ "getModelCaption", "classVehicleServiceApp.html#a796c3ee26150b58e676336bde6775ca4", null ],
+    [ "getModelList", "classVehicleServiceApp.html#a47a3e4b38a260ad27db12af65ff9678b", null ],
+    [ "getModelListBySeriesId", "classVehicleServiceApp.html#aae86d7edaf72e27fe45450b041b0f534", null ],
+    [ "getModelListForSelect", "classVehicleServiceApp.html#a5166391deee0dfd08862b01b1a8f5f84", null ],
+    [ "getSeriesByCodes", "classVehicleServiceApp.html#acae5cc99bbae1dc173516f01d9ffef50", null ],
+    [ "getSeriesById", "classVehicleServiceApp.html#adf28756cb96c74993fc1a2ffa87ab7e8", null ],
+    [ "getSeriesByUrl", "classVehicleServiceApp.html#a47c9b18bd6f9e194c0ab2c7d5bff8f8c", null ],
+    [ "getSeriesList", "classVehicleServiceApp.html#af0c917c858f519f2ab24a587cacc09d2", null ],
+    [ "getSeriesListByBrandId", "classVehicleServiceApp.html#a0828a09606ca45bb2eb3b86a6bb3b7ba", null ],
+    [ "getSeriesListByMakerId", "classVehicleServiceApp.html#aca7b7783ce9a07e0c3bd92a18ed3c100", null ],
+    [ "getVehicleFromWord", "classVehicleServiceApp.html#ac2dcbd2a8b95516c06eab079ab1e4293", null ],
+    [ "vin", "classVehicleServiceApp.html#aeb77fd8e4628360eed890b27bc62cfdb", null ]
+];
